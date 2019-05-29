@@ -1,10 +1,5 @@
 import discord
 import asyncio
-import time
-import configparser
-import os
-import sys
-import youtube_dl
 import ffmpeg
 import glob
 
@@ -87,101 +82,6 @@ async def on_message(message):
         TPTL__ = discord.Embed(title="Player", description="gegs")
         _bots_send_ = await channelg.send(content=None, embed=TPTK)
         await _bots_send_.edit(content=None, embed=TPTL__)
-
-    #Epic ID 連携
-    if str(message.channel.id) == str("575631344386965525"):
-        print("ID連携者: "+str(sender)+", Epic ID: "+str(message.content))
-
-        #ini書き込み
-        INI = "D:\\Documents\\Python\\Member`sEpicID.ini"
-        conf = configparser.SafeConfigParser()
-        #conf.add_section(str(section))
-        #conf.set(str(section), str(key), str(passw))
-        #conf.set(str(section), str(key+"1"), str(passw+"1"))
-        #f = open(file, "w")
-        #conf.write(f)
-        #f.close()
-
-    #音声垂れ流し
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'down_dir': 'F:\\Discord_bot_music_folder', 
-        'outtmpl':  "sample_music" + '.%(ext)s',
-        'postprocessors': [
-            {'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-             'preferredquality': '192'},
-            {'key': 'FFmpegMetadata'},
-        ],
-    }
-
-    Music_filel = 'F:\\動画編集に使うやつら\\動画BGM\\NCS\\Robin Hustin x Tobimorrow - Light It Up (feat. Jex).mp3'
-    CDM_file = 'F:\\Discord_bot_music_folder\\AOF Countdown VoiceEdited  Recorded by Mayonez  mikan (Nemesis Gaming Ent.)_A.Y.R.5.mp3'
-    #ydl = youtube_dl.YoutubeDL(ydl_opts)
-    #info_dict = ydl.extract_info("https://www.youtube.com/watch?v=UQsozNGm3wE", download=True)
-    #voice = await discord.VoiceChannel.connect(client.get_channel(476041230648606724))
-    if message.content == ("$$join"):
-        voice = await discord.VoiceChannel.connect(client.get_channel(476041230648606724))
-        voice.play(discord.FFmpegPCMAudio(CDM_file))
-        voice.is_playing()
-        print("joined")
-        return
-
-
-    if message.content == ("$$GoMatch"):
-        try:
-            print("is_played (T)")
-            voice = await discord.VoiceChannel.connect(client.get_channel(476041230648606724))
-            voice.play(discord.FFmpegPCMAudio(CDM_file))
-            return
-
-        except:
-            print("is_played (E)")
-            voice = await discord.VoiceChannel.connect(client.get_channel(476041230648606724))
-            voice.is_playing()
-            return
-
-    if message.content == ("$$Stop"):
-        voice = await discord.VoiceChannel.connect(client.get_channel(476041230648606724))
-        if(voice.is_playing()):
-            voice.stop()
-            print("stoped")
-            return
-
-
-    if message.content == ("$$leave"):
-        voice = await discord.VoiceChannel.connect(client.get_channel(476041230648606724))
-        try:
-            if voice is not None:
-                await voice.disconnect()
-                voice = None
-                print("disconnected")
-                return
-
-        except:
-            await voice.disconnect()
-            print("disconnected")
-            return
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    print(message_ids)
-    print(sender)
-
-
-
-
-
 
 
 
