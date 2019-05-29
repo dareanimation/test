@@ -1,27 +1,27 @@
-# ƒCƒ“ƒXƒg[ƒ‹‚µ‚½ discord.py ‚ð“Ç‚Ýž‚Þ
+# ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸ discord.py ã‚’èª­ã¿è¾¼ã‚€
 import discord
 
-# Ž©•ª‚ÌBot‚ÌƒAƒNƒZƒXƒg[ƒNƒ“‚É’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢
-TOKEN = 'NTgyNzE5MDc0OTc5Njc2MTcw.XOx5mw.xt8_ZOlv9NNTyx_xrT-QQZ46VHo'
+# è‡ªåˆ†ã®Botã®ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³ã«ç½®ãæ›ãˆã¦ãã ã•ã„
+TOKEN = 'NTczODg0MDA2MjE1NzEyNzY5.XMxZjw.HykU0JIlXil1t64QhHRdrAetgUY'
 
-# Ú‘±‚É•K—v‚ÈƒIƒuƒWƒFƒNƒg‚ð¶¬
+# æŽ¥ç¶šã«å¿…è¦ãªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆ
 client = discord.Client()
 
-# ‹N“®Žž‚É“®ì‚·‚éˆ—
+# èµ·å‹•æ™‚ã«å‹•ä½œã™ã‚‹å‡¦ç†
 @client.event
 async def on_ready():
-    # ‹N“®‚µ‚½‚çƒ^[ƒ~ƒiƒ‹‚ÉƒƒOƒCƒ“’Ê’m‚ª•\Ž¦‚³‚ê‚é
-    print('ƒƒOƒCƒ“‚µ‚Ü‚µ‚½')
+    # èµ·å‹•ã—ãŸã‚‰ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã«ãƒ­ã‚°ã‚¤ãƒ³é€šçŸ¥ãŒè¡¨ç¤ºã•ã‚Œã‚‹
+    print('ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã—ãŸ')
 
-# ƒƒbƒZ[ƒWŽóMŽž‚É“®ì‚·‚éˆ—
+# ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡æ™‚ã«å‹•ä½œã™ã‚‹å‡¦ç†
 @client.event
 async def on_message(message):
-    # ƒƒbƒZ[ƒW‘—MŽÒ‚ªBot‚¾‚Á‚½ê‡‚Í–³Ž‹‚·‚é
+    # ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é€ä¿¡è€…ãŒBotã ã£ãŸå ´åˆã¯ç„¡è¦–ã™ã‚‹
     if message.author.bot:
         return
-    # u/nekov‚Æ”­Œ¾‚µ‚½‚çu‚É‚á[‚ñv‚ª•Ô‚éˆ—
+    # ã€Œ/nekoã€ã¨ç™ºè¨€ã—ãŸã‚‰ã€Œã«ã‚ƒãƒ¼ã‚“ã€ãŒè¿”ã‚‹å‡¦ç†
     if message.content == '/neko':
-        await message.channel.send('‚É‚á[‚ñ')
+        await message.channel.send('ã«ã‚ƒãƒ¼ã‚“')
 
-# Bot‚Ì‹N“®‚ÆDiscordƒT[ƒo[‚Ö‚ÌÚ‘±
+# Botã®èµ·å‹•ã¨Discordã‚µãƒ¼ãƒãƒ¼ã¸ã®æŽ¥ç¶š
 client.run(TOKEN)
